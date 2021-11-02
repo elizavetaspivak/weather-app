@@ -5,3 +5,13 @@
   align-items: center;
 }
 
+.appContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appContent h1{
+  color: white;
+}
+

@@ -11,7 +11,7 @@ function App() {
 
     return (
         <div className="App" style={mainBlock}>
-            <div>
+            <div className='appContent'>
                 <h1>Check you weather</h1>
                 <SearchInput/>
             </div>
