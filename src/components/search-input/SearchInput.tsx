@@ -1,9 +1,19 @@
-import React from "react";
+import React, {ChangeEvent, useState} from "react";
 import {Divider, IconButton, InputBase, Paper} from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 
 export const SearchInput: React.FC = () => {
+  let [value, setValue] = useState('')
+
+    const changeSearch = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+      setValue(e.currentTarget.value)
+    }
+
+    const getMyWeather = () => {
+        console.log(value)
+    }
+
   return (
       <Paper
           component="form"
@@ -13,10 +23,12 @@ export const SearchInput: React.FC = () => {
               sx={{ ml: 1, flex: 1 }}
               placeholder="Search Google"
               inputProps={{ 'aria-label': 'search google maps' }}
+              value={value}
+              onChange={(e) => changeSearch(e)}
           />
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-          <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
-              <SearchIcon />
+          <IconButton sx={{ p: '10px' }} onClick={getMyWeather}>
+              <SearchIcon/>
           </IconButton>
       </Paper>
   )
