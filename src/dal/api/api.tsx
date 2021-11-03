@@ -10,9 +10,8 @@ const instance = axios.create({
 
 export const weatherAPI = {
     getWeather(name: string) {
-        return instance.get(`/weather?q=${name}&appid=${REACT_APP_API_KEY}`);
+        return instance.get(`weather?q=${name}&appid=${REACT_APP_API_KEY}`);
     },
-
 }
 
 
